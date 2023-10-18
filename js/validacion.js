@@ -1,4 +1,4 @@
-const validacionMsg = document.getElementById("validacionMsg");
+
 const contraseñaValid = document.getElementById("contraseñaValid")
 const contraseñaInvalid = document.getElementById("contraseñaInvalid")
 const contraseña2 = document.getElementById("contraseña2");
@@ -46,10 +46,40 @@ password1.addEventListener("input",() => {
     }
   });
 
-  validarContraseñas();
 
 
 
-btnSubmit.addEventListener("click", () => {
+btnSubmit.addEventListener("click", (event) => {
+    event.preventDefault();
+
     
 })
+
+document.getElementById("submit").addEventListener("click",(event)=>{
+    event.preventDefault();
+
+    
+})
+
+// document.getElementById("myForm").addEventListener("submit", function(event){
+//     var elements = this.elements;
+//     for (var i = 0, len = elements.length; i < len; ++i) {
+//         elements[i].required = true;
+//     }
+// });
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita la validación y el envío predeterminados
+    var elements = form.elements;
+    
+    var isEmpty = Array.prototype.map.call(elements, function(element) {
+        return element.value === '';
+    }).includes(true);
+
+    if (!isEmpty) {
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].required = true;
+        }
+        form.submit(); // Envía el formulario si todos los campos están rellenados
+    }
+});
