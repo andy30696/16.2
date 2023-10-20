@@ -16,15 +16,15 @@
 
   <div class="container">
     <main>
-      <form id="myForm" action="#" method="get" class="row mt-4 was-validated" novalidate>
+      <form id="myForm" action="#" method="get" class="row mt-4 needs-validation" novalidate>
         <div class="col">
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
           <div class="row g-3">
-            <div class="col-sm-6">
+            <div class="col-sm-6"> 
               <label for="nombre" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="nombre" required>
-              <div class="valid-feedback">
+              <div id="validacionName" class="valid-feedback">
                 Informacion correcta.
               </div>
               <div class="invalid-feedback">
@@ -46,12 +46,12 @@
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
-              <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-              <div class="valid-feedback">
-                Informacion correcta.
-              </div>
-              <div class="invalid-feedback">
-                Debe ingresar un email.
+                <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                <div class="valid-feedback">
+                  Informacion correcta.
+                </div>
+                <div class="invalid-feedback">
+                  Debe ingresar un email.
               </div>
               
               </div>
@@ -74,15 +74,34 @@
               
               </div>
             </div>
-
             <div class="col-sm-12">
-              <button type="button" class="btn btn-link ps-0 " data-bs-toggle="modal"
+              <button type="button" class="btn-link ps-0" data-bs-toggle="modal"
                 data-bs-target="#modalTerminos" required>Términos del servicio</button>
-                <div class="valid-feedback">
+                <div id="errorTerminos" class="invalid-feedback">
                   Debe aceptar los términos de servicio.
                 </div>
             </div>
-
+            <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5">Términos y condiciones del servicio.</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi sapiente voluptatum deserunt?
+                      Deleniti, adipisci vitae in quaerat eius nemo optio? Quas at magni saepe cumque. Delectus perspiciatis omnis
+                      accusamus.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label" for="validCheck">Acepto los términos y condiciones del servicio.</label>   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <button id="submit" class="btn btn-primary" type="submit">Registrarme</button>
 
@@ -101,32 +120,7 @@
     </footer>
   </div>
 
-  <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5">Términos y condiciones del servicio.</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi sapiente voluptatum deserunt?
-            Deleniti, adipisci vitae in quaerat eius nemo optio? Quas at magni saepe cumque. Delectus perspiciatis omnis
-            accusamus.</p>
-        </div>
-        <div class="modal-footer">
-          <div class="form-check">
-            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="validCheck">Acepto los términos y condiciones del servicio.</label>
-            
-            <div id="invalidCheck3Feedback" class="valid-feedback">
-              Debe estar de acuerdo antes de enviar.
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <script src="js/bootstrap.bundle.min.js"></script>
   

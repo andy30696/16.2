@@ -46,27 +46,14 @@ password1.addEventListener("input",() => {
     }
   });
 
-
-
-
-btnSubmit.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    
+btnSubmit.addEventListener("click", () => {
+  let checkbox = document.getElementById("invalidCheck");
+  if (!checkbox.checked) {
+    document.getElementById("errorTerminos").style.display = "block";
+  } else {
+    document.getElementById("errorTerminos").style.display = "none";
+  }
 })
-
-document.getElementById("submit").addEventListener("click",(event)=>{
-    event.preventDefault();
-
-    
-})
-
-// document.getElementById("myForm").addEventListener("submit", function(event){
-//     var elements = this.elements;
-//     for (var i = 0, len = elements.length; i < len; ++i) {
-//         elements[i].required = true;
-//     }
-// });
 
 form.addEventListener("submit", function(event) {
     event.preventDefault(); // Evita la validación y el envío predeterminados
